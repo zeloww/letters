@@ -48,29 +48,52 @@ class Colors:
     diagonal = ['diagonal', 'Diagonal', 'd', 'D']
 
 
-    black_to_white = ['m;m;m']
-    white_to_black = ['n;n;n']
+    black_to_white = ["m;m;m"]
+    black_to_red = ["m;0;0"]
+    black_to_green = ["0;m;0"]
+    black_to_blue = ["0;0;m"]
 
-    red_to_yellow = ['255;m;0']
-    red_to_pink = ['255;0;m']
+    white_to_black = ["n;n;n"]
+    white_to_red = ["255;n;n"]
+    white_to_green = ["n;255;n"]
+    white_to_blue = ["n;n;255"]
 
-    green_to_yellow = ['m;255;0']
-    green_to_lightblue = ['0;255;m']
+    red_to_black = ["n;0;0"]
+    red_to_white = ["255;m;m"]
+    red_to_yellow = ["255;m;0"]
+    red_to_purple = ["255;0;m"]
 
-    darkblue_to_lightblue = ['0;m;255']
-    darkblue_to_purple = ['m;0;255']
+    green_to_black = ["0;n;0"]
+    green_to_white = ["m;255;m"]
+    green_to_yellow = ["m;255;0"]
+    green_to_cyan = ["0;255;m"]
 
-    red_to_yellow_reversed = ['255;n;0']
-    red_to_pink_reversed = ['255;0;n']
+    blue_to_black = ["0;0;n"]
+    blue_to_white = ["m;m;255"]
+    blue_to_cyan = ["0;m;255"]
+    blue_to_purple = ["m;0;255"]
 
-    green_to_yellow_reversed = ['n;255;0']
-    green_to_lightblue_reversed = ['0;255;n']
+    yellow_to_red = ["255;n;0"]
+    yellow_to_green = ["n;255;0"]
 
-    darkblue_to_lightblue_reversed = ['0;n;255']
-    darkblue_to_purple_reversed = ['n;0;255']
+    purple_to_red = ["255;0;n"]
+    purple_to_blue = ["n;0;255"]
 
-    #Thanks to @billythegoat326 for that :p
-    gradients_list = [black_to_white, white_to_black, red_to_yellow, red_to_pink, green_to_yellow, green_to_lightblue, darkblue_to_lightblue, darkblue_to_purple, red_to_yellow_reversed, red_to_pink_reversed, green_to_yellow_reversed, green_to_lightblue_reversed, darkblue_to_lightblue_reversed, darkblue_to_purple_reversed]
+    cyan_to_green = ["0;255;n"]
+    cyan_to_blue = ["0;n;255"]
+
+    gradients_list = [
+        black_to_white, black_to_red, black_to_green, black_to_blue,
+        white_to_black, white_to_red, white_to_green, white_to_blue,
+
+        red_to_black, red_to_white, red_to_yellow, red_to_purple,
+        green_to_black, green_to_white, green_to_yellow, green_to_cyan,
+        blue_to_black, blue_to_white, blue_to_cyan, blue_to_purple,
+        
+        yellow_to_red, yellow_to_green,
+        purple_to_red, purple_to_blue,
+        cyan_to_green, cyan_to_blue
+    ]
 
     for gradients in gradients_list:
         gradient = 20
