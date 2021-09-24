@@ -1,9 +1,12 @@
-import random
+import random, os
+
+from colors import Colors
+from style import Style
 
 class Fade:
     
     def static(color:str, text:str, fond:str='1',style:str='1'):
-        if color.lowercase() in ['random', 'r']:
+        if color.lower() in ['random', 'r']:
             color = random.choice(range(38))
 
         os.system('')
@@ -22,7 +25,7 @@ class Fade:
         return result
 
 
-    def gradient(gradient:str, text:str, types:str='vertical', speed:int=1):
+    def gradient(gradient:str, text:str, type:str='vertical', speed:int=1):
         os.system('')
 
         result = ''
@@ -34,10 +37,10 @@ class Fade:
         for line in text.splitlines():
             characters = list(line)
 
-            if types in Colors.horizontal:
+            if type in Colors.horizontal:
                 gradient_n = 0
 
-            if types in Colors.vertical:
+            if type in Colors.vertical:
                 for character in characters:
                     result += f'\033[38;2;{gradient[gradient_n]}m{character}\033[38;2;255;255;255m'
 
@@ -67,7 +70,7 @@ class Fade:
 
         return result
 
-    def all_gradients(text:str='Example', types:str='vertical', speed:str=1):
+    def all_gradients(text:str='Example', type:str='vertical', speed:str=1):
         os.system('')
         result = ''
 
@@ -78,10 +81,10 @@ class Fade:
             for line in text.splitlines():
                 characters = list(line)
 
-                if types in Colors.horizontal:
+                if type in Colors.horizontal:
                     gradient_n = 0
 
-                if types in Colors.vertical:
+                if type in Colors.vertical:
                     for character in characters:
                         result_one += f'\033[38;2;{gradient[gradient_n]}m{character}\033[38;2;255;255;255m'
 
