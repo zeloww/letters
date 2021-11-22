@@ -132,14 +132,14 @@ def on_input(stop:str, accept:bool):
 
             break
 
-def on_sleep(time:int | float, accept:bool):
+def on_sleep(time:float, accept:bool):
     sleep(time)
 
     if accept:
         global ok
         ok = True
 
-def fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:int | float=None, interval:int | float=0.05, max_speed:int=10) -> None:
+def fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:float=None, interval:float=0.05, max_speed:int=10) -> None:
     system('')
     speed = 0
 
