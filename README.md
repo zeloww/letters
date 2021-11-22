@@ -1,7 +1,7 @@
 # Letters Module
 A simple method to customize your texts in Python
 
-Version: 1.0
+Version: 1.9
 
 ## Download
 
