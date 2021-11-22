@@ -11,6 +11,8 @@ You can download the `letters` module with Python Package Index (PyPI).
 
 `$ pip install letters`
 
+# NOT UPDATED!
+
 ## Exemple
 
 ### Script:
