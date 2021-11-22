@@ -7,17 +7,19 @@ try:
 
 except OSError:
     import io
+    
     with io.open('README.md', encoding="utf-8") as f:
         long_description = f.read()
 
 setup(
     name='letters',
-    version='1.6',
+    version='1.9.1',
     license='GPLv3+',
     authors=['zelow'],
     url='https://github.com/zeloww/letters',
-    description='A simple method for customize your texts!',
+    install_requires=['numpy', 'pillow'],
+    description='A simple method to customize your programs to infinity!',
     long_description=long_description,
     keywords=['python', 'py', 'letter', 'letters', 'font', 'ascii', 'color', 'colors', 'gradient', 'gradients', 'fade' 'text'],
-    packages=['letters']
+    packages=['letters'],
 )
