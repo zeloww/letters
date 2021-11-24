@@ -121,7 +121,7 @@ def all_gradients(text:str='Example', mode_type:str='vertical', speed:str=1) -> 
 
     return result
 
-def on_input(stop:str, accept:bool):
+def on_input(stop:str, accept:bool) -> None:
     while True:
         press = input()
 
@@ -132,7 +132,7 @@ def on_input(stop:str, accept:bool):
 
             break
 
-def on_sleep(time:float, accept:bool):
+def on_sleep(time:float, accept:bool) -> None:
     sleep(time)
 
     if accept:
