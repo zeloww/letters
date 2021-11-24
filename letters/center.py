@@ -48,7 +48,7 @@ class Center:
 		result = '\n' * lines + '\n'.join(horizontal_result.splitlines())
 		return result
 
-	def border(text:str, lenght:str="=", width:str="|", distance:int=1, center=True):
+	def box(text:str, lenght:str="=", width:str="|", distance:int=1, center=True):
 	    longest_line_lenght = max([len(line) for line in text.splitlines()])
 	    result = lenght * (longest_line_lenght + 2 + distance * 2) + "\n"
 
