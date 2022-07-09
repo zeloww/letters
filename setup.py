@@ -13,7 +13,7 @@ except OSError:
 
 setup(
     name='letters',
-    version='1.5',
+    version='1.5.2',
     license='GPLv3+',
     authors=['zelow'],
     url='https://github.com/zeloww/letters',
