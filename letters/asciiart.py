@@ -46,7 +46,7 @@ def fonts_list(text:str=None) -> str:
 
     return result
 
-def getAverageL(image:object) -> object:
+def getAverageColor(image:Image) -> float:
     '''
     Given PIL Image, return average value of grayscale value
     '''
@@ -59,57 +59,46 @@ def getAverageL(image:object) -> object:
     # get average
     return np.average(im.reshape(w*h))
 
-def img2ascii(file:str, size:int=70, scale:float=0.43, moreLevels:str=None) -> str:
-    # gray scale level values from:
-    # http://paulbourke.net/dataformats/asciiart/
+# gray scale level values from:
+# http://paulbourke.net/dataformats/asciiart/
 
-    # 70 levels of gray
-    gscale1 = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`\'. '
+# 70 levels of gray
+complexGrayScale = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`\'. '
 
-    # 10 levels of gray
-    gscale2 = '@%#*+=-:. '
+# 10 levels of gray
+easyGrayScale = '@%#*+=-:. '
+
+def img2ascii(file:str, scale:float=0.04, moreLevels:str=None, reverseLight:bool=False) -> str:
+    if scale <= 0:
+        raise ValueError("Scale must be greater than 0.")
 
     image = Image.open(file).convert('L')
-    W, H = image.size[0], image.size[1]
- 
-    w = W/size
-    h = w/scale
-    rows = int(H/h)
- 
-    if size > W or rows > H:
-        return 'Image too small for specified size!'
- 
-    aimg = []
-    result = ''
+    width, height = image.size
 
-    for j in range(rows):
-        y1 = int(j*h)
-        y2 = int((j+1)*h)
- 
-        if j == rows-1:
-            y2 = H
- 
-        aimg.append('')
- 
-        for i in range(size):
-            x1 = int(i*w)
-            x2 = int((i+1)*w)
- 
-            if i == size-1:
-                x2 = W
- 
+    image = image.resize((int((width*2) * scale), int(height * scale)))
+    width, height = image.size
+
+    asciiArray = [''] * height
+    reverse = 1 if not reverseLight else -1
+    grayScale = (complexGrayScale if moreLevels else easyGrayScale)[::reverse]
+
+    for j in range(height):
+        y1, y2 = j, (j+1)
+
+        if j == height-1:
+            y2 = height
+
+        for i in range(width):
+            x1, x2 = i, (i+1)
+
+            if i == width-1:
+                x2 = width
+
             img = image.crop((x1, y1, x2, y2))
-            avg = int(getAverageL(img))
- 
-            if moreLevels:
-                gsval = gscale1[int((avg*69)/255)]
+            avg = int(getAverageColor(img))
 
-            else:
-                gsval = gscale2[int((avg*9)/255)]
- 
-            aimg[j] += gsval
+            gsval = grayScale[((avg*len(grayScale))-1)//255]
 
-    for line in aimg:
-        result += line + '\n'
+            asciiArray[j] += gsval
 
-    return result
+    return '\n'.join(asciiArray)
