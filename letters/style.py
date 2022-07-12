@@ -21,7 +21,7 @@ def length(taille:int, text:str) -> str:
     return result
 
 def big(tailleg:int, taillea:int, text:str) -> str:
-    result = Style.grossir(tailleg, text)
-    result = Style.agrandir(taillea, text)
+    result = style.width(tailleg, text)
+    result = style.length(taillea, text)
 
     return result
