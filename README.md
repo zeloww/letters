@@ -77,6 +77,12 @@ Colors.purple_to_red, Colors.Colors.purple_to_blue,
 Colors.cyan_to_green, Colors.cyan_to_blue
 ```
 
+#Center
+> Center your text in many ways
+
+from letters.center import Center
+Center.logo, box, horizontal, vertical, center
+
 ## ASCII
 
 > list of all ASCII character types
