@@ -51,7 +51,7 @@ Finir d'écrire:
 > gradient gradient:str, text:str, mode_type:str='vertical', speed:int=1
 > all_gradients text:str='Example', mode_type:str='vertical', speed:str=1
 
-fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:float=None, interval:float=0.05, max_speed:int=10)
+> fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:float=None, interval:float=0.05, max_speed:int=10)
 
 ### Colors list
 
