@@ -42,6 +42,17 @@ $ cd letters
 
 ## Fade
 
+> Color your texts easily
+
+Finir d'écrire:
+> statics color:str, text:str, fond:str='1',style:str='1'
+> all_statics text="Exemple"
+
+> gradient gradient:str, text:str, mode_type:str='vertical', speed:int=1
+> all_gradients text:str='Example', mode_type:str='vertical', speed:str=1
+
+fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:float=None, interval:float=0.05, max_speed:int=10)
+
 ### Colors list
 
 > List of the ANSI Escape Codes
@@ -141,11 +152,11 @@ input:
 ```python
 from letters.asciiart import img2ascii
 
-img2ascii("path/to/dir/image.jpg", scale=0.01, moreLevels=None, reverseLight=False)
+img2ascii("path/to/dir/image.jpg", scale=0.25, moreLevels=None, reverseLight=False)
 ```
 
 output:
-<img src=https://imgur.com/v8oJ18N.jpg>
+<img src=https://i.imgur.com/C57mNoo.png>
 
 ## Text size
 > Change the size of any of your texts
