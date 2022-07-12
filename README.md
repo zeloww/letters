@@ -40,4 +40,126 @@ $ git clone https://github.com/Rapptz/letters
 $ cd letters
 ```
 
+## Fade
 
+### Colors list
+
+> List of the ANSI Escape Codes
+
+```python
+from letters.colors import Colors
+
+Colors.black, Colors.red, Colors.green, Colors.yellow, Colors.blue, Colors.magenta, Colors.cyan, Colors.white
+Colors.bg_black, Colors.bg_red, Colors.bg_green, Colors.bg_yellow, Colors.bg_blue, Colors.bg_magenta, Colors.bg_cyan, Colors.bg_white
+
+Colors.bg_bright_black, Colors.bg_bright_red, Colors.bg_bright_green, Colors.bg_bright_yellow, Colors.bg_bright_blue, Colors.bg_bright_magenta, Colors.bg_bright_cyan, bg_bright_white
+    
+Colors.black_to_white, Colors.black_to_red, Colors.black_to_green, Colors.black_to_blue,
+Colors.white_to_black, Colors.white_to_red, Colors.white_to_green, Colors.white_to_blue,
+
+Colors.red_to_black, Colors.red_to_white, Colors.red_to_yellow, Colors.red_to_purple,
+Colors.green_to_black, Colors.green_to_white, Colors.green_to_yellow, Colors.green_to_cyan,
+Colors.blue_to_black, Colors.blue_to_white, Colors.blue_to_cyan, Colors.blue_to_purple,
+
+Colors.yellow_to_red, Colors.yellow_to_green,
+Colors.purple_to_red, Colors.Colors.purple_to_blue,
+Colors.cyan_to_green, Colors.cyan_to_blue
+```
+
+## ASCII
+
+> list of all ASCII character types
+
+```python
+from letters.ascii import Ascii
+
+Ascii.lower_case #['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+Ascii.digits #['1', '2', '3', '4', '5', '6', '7', '8', '9']
+Ascii.hexdigits #['1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'A', 'B', 'C', 'D', 'E', 'F']
+Ascii.octdigits #['0', '1', '2', '3', '4', '5', '6', '7']
+Ascii.punctuation #['!', '"', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ';', '<', '=', '>', '?', '@', '[', '\\', ']', '^', '_', '`', '{', '|', '}', '~']
+Ascii.whitespace #[' ', '\t', '\v', '\n', '\r', '\f']
+
+Ascii.upper_case #list(map(str.upper, lower_case))
+Ascii.letters #lower_case + upper_case
+Ascii.printable #digits + letters + punctuation + whitespace
+
+Ascii.yes #['y', 'yes', 'Y', 'Yes', 'YES']
+Ascii.no #['n', 'no', 'N', 'No', 'NO']
+```
+
+## Fonts
+
+> Customize any texts with Font!
+
+### Fonts list
+
+> List of all fonts
+
+```python
+from letters.asciiart import all_fonts
+
+def get_fontslist():
+  return all_fonts
+
+get_fontslist()
+```
+
+**All fonts name are available** <b><a href=https://pastebin.com/r1taHnrZ/>Here</b>
+
+Returns a list of all fonts
+
+input:
+```python
+from letters.asciiart import fonts_list
+fonts_list(text=Zelow)
+```
+
+Output:<br>
+Show all fonts with the text `Zelow`
+
+## ASCII Art
+
+> Returns the chosen image in ASCII art
+
+### Gray levels
+
+```python
+# gray scale level values from:
+# http://paulbourke.net/dataformats/asciiart/
+
+# 70 levels of gray
+complexGrayScale = '$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,"^`\'. '
+
+# 10 levels of gray by default
+easyGrayScale = '@%#*+=-:. '
+```
+
+### Exemple
+
+input:
+`img2ascii("path/to/dir/image.jpg", scale=0.01, moreLevels=None, reverseLight=False)`
+
+output:
+<img src=https://imgur.com/v8oJ18N.jpg>
+
+## Text size
+> Change the size of any of your texts
+  
+length
+width
+big
+
+## Others
+> Other useful functions
+
+```python
+from letters.system import Title, Clear, Print, Input, Replace #or from letters.system import *
+
+Title("New program title") #Change the program title
+Clear() #Delete the text already present in the terminal
+
+Print("My text", speed=0.5) #Print all characters in `My text`waiting `0.5` seconds between each characters 
+Input("My text", speed=1) #Input the text by printing all characters in `My text` waiting `1` seconds between each characters 
+Replace(list_name, base, change) #Replace `base` by `change` for all elements in `list_name`
+```
