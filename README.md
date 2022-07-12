@@ -23,7 +23,7 @@
 
 ## Install
 
-To install with PIP, do the following:
+To install with PIP, do the following command:
 
 ```shell
 # Linux/macOS
@@ -33,7 +33,7 @@ python3 -m pip install -U letters
 py -3 -m pip install -U letters
 ```
 
-To install the development version, do the following:
+To install the development version, do the following command:
 
 ```shell
 $ git clone https://github.com/Rapptz/letters
@@ -90,7 +90,9 @@ Ascii.no #['n', 'no', 'N', 'No', 'NO']
 
 ## Fonts
 
-> Customize any texts with Font!
+> Customize any texts with fonts!
+
+**All font names are available [Here](https://pastebin.com/r1taHnrZ)**
 
 ### Fonts list
 
@@ -104,8 +106,6 @@ def get_fontslist():
 
 get_fontslist()
 ```
-
-**All fonts name are available** <b><a href=https://pastebin.com/r1taHnrZ/>Here</b>
 
 Returns a list of all fonts
 
@@ -138,7 +138,11 @@ easyGrayScale = '@%#*+=-:. '
 ### Exemple
 
 input:
-`img2ascii("path/to/dir/image.jpg", scale=0.01, moreLevels=None, reverseLight=False)`
+```python
+from letters.asciiart import img2ascii
+
+img2ascii("path/to/dir/image.jpg", scale=0.01, moreLevels=None, reverseLight=False)
+```
 
 output:
 <img src=https://imgur.com/v8oJ18N.jpg>
@@ -146,9 +150,42 @@ output:
 ## Text size
 > Change the size of any of your texts
   
-length
-width
-big
+```py
+>>> from letters.style import width, length, big
+>>>
+>>> box = """
+... |--------|
+... |        |
+... |--------|
+... """
+
+>>> print(width(2, box))
+"""
+||----------------||
+||                ||
+||----------------||
+"""
+
+>>> print(length(2, box))
+"""
+|--------|
+|--------|
+|        |
+|        |
+|--------|
+|--------|
+"""
+
+>>> print(big(2, 2, box))
+"""
+||----------------||
+||----------------||
+||                ||
+||                ||
+||----------------||
+||----------------||
+"""
+```
 
 ## Others
 > Other useful functions
@@ -163,3 +200,15 @@ Print("My text", speed=0.5) #Print all characters in `My text`waiting `0.5` seco
 Input("My text", speed=1) #Input the text by printing all characters in `My text` waiting `1` seconds between each characters 
 Replace(list_name, base, change) #Replace `base` by `change` for all elements in `list_name`
 ```
+
+## 👤 Authors
+
+👤 GitHub: [@**Zeloww**](https://github.com/zeloww)<br>
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/zeloww/letters/issues).
+
+## ❤ Show your support
+
+Give a ⭐️ if this project helped you!
