@@ -36,7 +36,7 @@ py -3 -m pip install -U letters
 To install the development version, do the following command:
 
 ```shell
-$ git clone https://github.com/Rapptz/letters
+$ git clone https://github.com/zeloww/letters
 $ cd letters
 ```
 
