@@ -16,7 +16,7 @@
   </a>
 </p>
 
-> **Letters** is a python library to make very beautiful TUI designs, ASCII Arts, Fonts and more.
+> **Letters** is a python library to make very beautiful TUI designs, ASCII arts, fonts and more.
 > <br>
 > <br>
 > Developped by [Zelow](https://github.com/Zeloww)
