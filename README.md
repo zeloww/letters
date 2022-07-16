@@ -133,7 +133,7 @@ Returns a list of all fonts
 input:
 ```python
 from letters.asciiart import fonts_list
-fonts_list(text=Zelow)
+fonts_list(text="Zelow")
 ```
 
 Output:<br>
