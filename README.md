@@ -48,6 +48,44 @@ $ cd letters
 
 > Color your texts easily
 
+#Static
+
+> Customize your text easily with [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) 
+
+```py
+from letters import static
+from letters.colors import Colors
+
+print(static(Colors.blue, "By Zeloww", fond='1',style='1'))
+```
+
+> Test all [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) with a specific text
+
+```python
+from letters import all_statics
+
+print(all_statics("Made with <3"))
+```
+
+
+### Gradient
+
+> Gradient your text
+
+```python
+```
+
+> Test all gradients with a specific text, mode and speed
+
+```python
+from letters import all_gradients
+
+all_gradients(text='Letters on the top !', mode_type='vertical', speed=1)
+```
+
+
+### Fade
+
 Finir d'écrire:
 > statics color:str, text:str, fond:str='1',style:str='1'
 > all_statics text="Exemple"
@@ -59,7 +97,7 @@ Finir d'écrire:
 
 ### Colors list
 
-> List of the ANSI Escape Codes
+> List of the [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) 
 
 ```python
 from letters.colors import Colors
@@ -82,6 +120,7 @@ Colors.cyan_to_green, Colors.cyan_to_blue
 ```
 
 #Center
+
 > Center your text in many ways
 
 > Make a logo with text
@@ -131,9 +170,6 @@ Center.horizontal("Use letters!") #center horizontally
 Center.vertical("Made with <3") #center vertically
 Center.center("By github.com/Zeloww") #center horizontally and vertically
 ```
-
-from letters.center import Center
-Center.logo, border, horizontal, vertical, center
 
 ## ASCII
 
