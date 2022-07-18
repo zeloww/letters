@@ -55,7 +55,7 @@ from letters.colors import Colors
 fade(gradient=Colors.yellow_to_green, text="Give a star ;) !", mode_type:str='horizontal', stop="", time=None, interval=0.05, max_speed=10)
 ```
 
-#Static
+## Static
 
 > Customize your text easily with [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) 
 
@@ -74,8 +74,7 @@ from letters import all_statics
 print(all_statics("Made with <3"))
 ```
 
-
-### Gradient
+## Gradient
 
 > Gradient your text
 
@@ -94,7 +93,7 @@ from letters import all_gradients
 all_gradients(text='Letters on the top !', mode_type='vertical', speed=1)
 ```
 
-### Colors list
+## Colors list
 
 > List of the [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) 
 
@@ -118,7 +117,7 @@ Colors.purple_to_red, Colors.Colors.purple_to_blue,
 Colors.cyan_to_green, Colors.cyan_to_blue
 ```
 
-#Center
+## Center
 
 > Center your text in many ways
 
