@@ -84,8 +84,56 @@ Colors.cyan_to_green, Colors.cyan_to_blue
 #Center
 > Center your text in many ways
 
+> Make a logo with text
+
+```python
+>>> from letters.center import Center
+>>> i="""
+...
+...          wWWWw               wWWWw
+...    vVVVv (___) wWWWw         (___)  vVVVv
+...    (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
+...     ~Y~   \|    ~Y~   (___)    |/    ~Y~
+...     \|   \ |/   \| /  \~Y~/   \|    \ |/
+...    \\|// \\|// \\|/// \\|//  \\|// \\\|///
+... ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+... """
+>>> print(Center.logo("hello\nUse Letters !", i))
+hello
+Use Letters ! 
+                                wWWWw               wWWWw
+                          vVVVv (___) wWWWw         (___)  vVVVv
+                          (___)  ~Y~  (___)  vVVVv   ~Y~   (___)
+                           ~Y~   \|    ~Y~   (___)    |/    ~Y~
+                           \|   \ |/   \| /  \~Y~/   \|    \ |/
+                          \\|// \\|// \\|/// \\|//  \\|// \\\|///
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+```
+
+> Center text in a terminal horizontally, vertically or both directly!
+
+```python
 from letters.center import Center
-Center.logo, box, horizontal, vertical, center
+
+"""
+ |  border(text: str, lenght: str = '=', width: str = '|', distance: int = 1, center=True)
+ |
+ |  center(text: str, spaces: int = None, lines: int = None, force_vertical: bool = True, force_horizontal: bool = False, force_center: bool = False, end='\n') -> str
+ |
+ |  horizontal(text: str, spaces: int = None, force_horizontal: bool = False, end: str = '') -> str
+ |
+ |  logo(text: str, icon: str, spaces: int = 5) -> str
+ |
+ |  vertical(text: str, lines: int = None, force_vertical: bool = True) -> str
+"""
+
+Center.horizontal("Use letters!") #center horizontally
+Center.vertical("Made with <3") #center vertically
+Center.center("By github.com/Zeloww") #center horizontally and vertically
+```
+
+from letters.center import Center
+Center.logo, border, horizontal, vertical, center
 
 ## ASCII
 
