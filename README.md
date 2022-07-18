@@ -48,6 +48,13 @@ $ cd letters
 
 > Color your texts easily
 
+```py
+from letters import fade
+from letters.colors import Colors
+
+fade(gradient=Colors.yellow_to_green, text="Give a star ;) !", mode_type:str='horizontal', stop="", time=None, interval=0.05, max_speed=10)
+```
+
 #Static
 
 > Customize your text easily with [ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code) 
@@ -73,6 +80,10 @@ print(all_statics("Made with <3"))
 > Gradient your text
 
 ```python
+from letters import gradient
+from letters.colors import Colors
+
+print(gradient(gradient=Colors.red_to_purple, text="PyPi.com/projects/Letters, mode_type='horizontal', speed=1))
 ```
 
 > Test all gradients with a specific text, mode and speed
@@ -82,18 +93,6 @@ from letters import all_gradients
 
 all_gradients(text='Letters on the top !', mode_type='vertical', speed=1)
 ```
-
-
-### Fade
-
-Finir d'écrire:
-> statics color:str, text:str, fond:str='1',style:str='1'
-> all_statics text="Exemple"
-
-> gradient gradient:str, text:str, mode_type:str='vertical', speed:int=1
-> all_gradients text:str='Example', mode_type:str='vertical', speed:str=1
-
-> fade(gradient:str, text:str, mode_type:str='vertical', stop:str="", time:float=None, interval:float=0.05, max_speed:int=10)
 
 ### Colors list
 
